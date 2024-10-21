@@ -4,6 +4,7 @@ phases:
   build:
     commands:
       - tar -zcf SOURCES/alexchesters-utils.tar.gz src
-      - rpmbuild --define "version 0.0.1" --define "_topdir `pwd`" --define "debug_package %{nil}" -ba SPECS/utils.spec
+      - export VERSION=0.0.1
+      - rpmbuild --define "version $VERSION" --define "_topdir `pwd`" --define "debug_package %{nil}" -ba SPECS/utils.spec
       - ls -alh RPMS/aarch64/
-      # - aws s3 cp RPMS/aarch64/alexchesters-utils-0.0.0-1.aarch64.rpm s3://live-alexchesters-utils/aarch64/alexchesters-utils-0.0.0-1.aarch64.rpm
+      # - aws s3 cp RPMS/aarch64/alexchesters-utils-$VERSION-1.aarch64.rpm s3://live-alexchesters-utils/$VERSION/aarch64/alexchesters-utils-0.0.0-1.aarch64.rpm
