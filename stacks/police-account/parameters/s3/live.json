@@ -1,0 +1,9 @@
+{
+  "Parameters": {
+    "Environment": "live"
+  },
+  "Tags": {
+    "Project": "utils",
+    "Environment": "live"
+  }
+}
