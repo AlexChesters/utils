@@ -17,10 +17,10 @@ Resources:
     Type: AWS::CodeBuild::Project
     Properties:
       Artifacts:
-        Type: S3
+        Type: CODEPIPELINE
         Location: !ImportValue ci-infrastructure-artifacts-bucket-name
         Path: /artifacts/utils/
-        Packaging: ZIP
+        Packaging: NONE
         Name: build
         NamespaceType: BUILD_ID
       Environment:
@@ -39,7 +39,7 @@ Resources:
       ArtifactStore:
         Type: S3
         Location: !ImportValue ci-infrastructure-artifacts-bucket-name
-      Name: police
+      Name: utils
       RestartExecutionOnUpdate: true
       RoleArn: !ImportValue ci-infrastructure-codepipeline-base-execution-iam-role
       PipelineType: V2
