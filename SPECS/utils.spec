@@ -1,5 +1,5 @@
 %define name alexchesters-utils
-%define version 0.0.0
+%{!?version: %{error: Version is not defined}}
 %define release 1
 %define buildroot %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
